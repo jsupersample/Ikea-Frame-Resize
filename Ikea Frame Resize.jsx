@@ -27,7 +27,7 @@ var dialog = new Window("dialog");
 var statictext1 = dialog.add("statictext", undefined, undefined, {name: "statictext1"}); 
     statictext1.text = "Ikea Frame Size"; 
 
-var size_array = ["12x16","16x20","19 3/4 x27 1/2","24x35 3/4","12x16 UK","16x20","19 3/4 x27 1/2 UK","19 3/4 x27 1/2 UK","24x35 3/4 UK"]; 
+var size_array = ["12x16","16x20","19 3/4 x27 1/2","24x35 3/4","12x16 UK","16x20 UK","19 3/4 x27 1/2 UK","19 3/4 x27 1/2 UK","24x35 3/4 UK"]; 
 var size_selection = dialog.add("dropdownlist", undefined, undefined, {name: "size", items: size_array}); 
 size_selection.selection = 0; 
 
