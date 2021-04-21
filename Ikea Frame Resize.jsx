@@ -27,7 +27,7 @@ var dialog = new Window("dialog");
 var statictext1 = dialog.add("statictext", undefined, undefined, {name: "statictext1"}); 
     statictext1.text = "Ikea Frame Size"; 
 
-var size_array = ["12x16","16x20","19 3/4 x27 1/2","24x35 3/4"]; 
+var size_array = ["12x16","16x20","19 3/4 x27 1/2","24x35 3/4","12x16 UK","16x20","19 3/4 x27 1/2 UK","19 3/4 x27 1/2 UK","24x35 3/4 UK"]; 
 var size_selection = dialog.add("dropdownlist", undefined, undefined, {name: "size", items: size_array}); 
 size_selection.selection = 0; 
 
@@ -77,37 +77,74 @@ button1.onClick = function(){
     var printsize = ""; //holds the print size for the selected frame size
     if(size == "12x16"){
         if(orient=="Landscape"){
-            doResize(9.0,7.0,10.0,8.0);
+            doResize(9.75,7.75,10.0,8.0);
 
         } else {
-            doResize(7.0,9.0,8.0,10.0);
+            doResize(7.75,9.75,8.0,10.0);
         } 
         printsize = "8x10";
     }
     else if(size=="16x20"){
         if(orient=="Landscape"){
-            doResize(15.25,11.5,18.0,12.0);
+            doResize(16,12,18.0,12.0);
         }
         else {
-            doResize(11.5,15.25,12.0,18.0)
+            doResize(12,16,12.0,18.0)
         }
         printsize = "12x18";
     }
     else if(size=="19 3/4 x27 1/2"){
         if(orient=="Landscape"){
-            doResize(19.25,15.25,20.0,16.0);
+            doResize(19.75,15.75,20.0,16.0);
         }
         else{
-            doResize(15.25,19.25,16.0,20.0);
+            doResize(15.75,19.75,16.0,20.0);
         }
         printsize = "16x20";
     }
     else if(size=="24x35 3/4"){
         if(orient=="Landscape"){
-            doResize(27.25,19.75,30.0,20.0);
+            doResize(27.5,19.75,30.0,20.0);
         }
         else{
-            doResize(19.75,27.25,20.0,30.0);
+            doResize(19.75,27.5,20.0,30.0);
+        }
+        printsize="20x30";
+    }
+
+    else if(size == "12x16 UK"){
+        if(orient=="Landscape"){
+            doResize(11.811,8.26772,8.0,10.0);
+
+        } else {
+            doResize(8.26772,11.811,10.0,8.0);
+        } 
+        printsize = "8x10";
+    }
+    else if(size=="16x20 UK"){
+        if(orient=="Landscape"){
+            doResize(15.748,11.811,18.0,12.0);
+        }
+        else {
+            doResize(11.811,15.748,12.0,18.0)
+        }
+        printsize = "12x18";
+    }
+    else if(size=="19 3/4 x27 1/2 UK"){
+        if(orient=="Landscape"){
+            doResize(19.685,15.748,20.0,16.0);
+        }
+        else{
+            doResize(19.685,19.2913,16.0,20.0);
+        }
+        printsize = "16x20";
+    }
+    else if(size=="24x35 3/4 UK"){
+        if(orient=="Landscape"){
+            doResize(27.5591,19.685,30.0,20.0);
+        }
+        else{
+            doResize(19.685,27.5591,20.0,30.0);
         }
         printsize="20x30";
     }
